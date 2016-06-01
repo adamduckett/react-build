@@ -1,0 +1,30 @@
+{
+  "name": "react-build",
+  "version": "1.0.0",
+  "description": "Get up and running with a React build quickly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamduckett/react-build.git"
+  },
+  "keywords": [
+    "react",
+    "build"
+  ],
+  "author": "Adam Duckett",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/adamduckett/react-build/issues"
+  },
+  "homepage": "https://github.com/adamduckett/react-build#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1",
+    "opn": "^4.0.2",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  }
+}

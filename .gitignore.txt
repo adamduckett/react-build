@@ -1,0 +1,16 @@
+# Sass
+.sass-cache
+*.css.map
+*.scssc
+
+# CSS
+*.css
+
+# Node / Grunt
+node_modules
+
+# System files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+*.log
