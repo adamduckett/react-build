@@ -6,8 +6,9 @@
  * Gulp Packages
  */
 
-// Default
+// General
 var gulp = require('gulp');
+var notify = require('gulp-notify');
 
 // Local Server
 var webserver = require('gulp-webserver');
@@ -21,7 +22,6 @@ var reactDOM = require('react-dom');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
-var util = require('gulp-util');
 
 
 /**
@@ -35,6 +35,7 @@ var bases = {
 
 var paths = {
   scripts: {
+    input : bases.app + '**/*.js',
     output: bases.web + 'js/'
   },
   server: {
@@ -69,14 +70,15 @@ gulp.task('open', function() {
 // Scripts
 gulp.task('scripts', function () {
   browserify({
-    entries: './app/app.js',
+    entries: bases.app + 'app.js',
+    extensions: ['.js'],
     debug: true
   })
   .transform('babelify')
   .bundle()
-  .on('error', util.log)
   .pipe(source('bundle.js'))
-  .pipe(gulp.dest(paths.scripts.output));
+  .pipe(gulp.dest(paths.scripts.output))
+  .pipe(notify({ message: 'Scripts task complete' }))
 });
 
 
@@ -85,7 +87,7 @@ gulp.task('scripts', function () {
  */
 gulp.task('watch', function(){
   // Run this task on file changes
-  gulp.watch('./app/*.js', ['scripts']);
+  gulp.watch(paths.scripts.input, ['scripts']);
 });
 
 gulp.task('default', ['scripts', 'webserver', 'watch', 'open']);
