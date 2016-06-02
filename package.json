@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/adamduckett/react-build#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
     "gulp": "^3.9.1",
     "gulp-webserver": "^0.9.1",
     "opn": "^4.0.2",

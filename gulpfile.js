@@ -22,7 +22,7 @@ var reactDom = require('react-dom');
  * Paths to project folders
  */
 var paths = {
-  input: 'src/',
+  input: 'app/',
   output: 'dist/',
   server: {
     host: 'localhost',
