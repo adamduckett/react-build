@@ -9,6 +9,7 @@
 // General
 var gulp = require('gulp');
 var notify = require('gulp-notify');
+var util = require('gulp-util');
 
 // Local Server
 var webserver = require('gulp-webserver');
@@ -76,6 +77,7 @@ gulp.task('scripts', function () {
   })
   .transform('babelify')
   .bundle()
+  .on('error', util.log)
   .pipe(source('bundle.js'))
   .pipe(gulp.dest(paths.scripts.output))
   .pipe(notify({ message: 'Scripts task complete' }))
@@ -86,7 +88,6 @@ gulp.task('scripts', function () {
  * Task Runners
  */
 gulp.task('watch', function(){
-  // Run this task on file changes
   gulp.watch(paths.scripts.input, ['scripts']);
 });
 
