@@ -9,6 +9,9 @@
 # Node / Grunt
 node_modules
 
+# Dist
+dist
+
 # System files
 *.DS_Store
 *[Tt]humbs.db
