@@ -10,7 +10,7 @@
 node_modules
 
 # Dist
-dist
+dist/
 
 # System files
 *.DS_Store
